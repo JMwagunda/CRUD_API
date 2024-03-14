@@ -11,11 +11,6 @@ app.use(express.json);
 // router
 
 // Controllers
-
-app.listen(5000, () => {
-  console.log("Server is running on port 5000");
-});
-
 app.get("/", (req, res) => {
   res.send("Hello from NODE API");
 });
@@ -39,7 +34,7 @@ app.get("api/products/:id", async (req, res) => {
   }
 });
 //API for creating a product(POST)
-app.post("/api/product", async (req, res) => {
+app.post("/api/products", async (req, res) => {
   try {
     const product = await Product.create(req.body);
     res.status(200).json(product);
@@ -81,8 +76,8 @@ mongoose
   })
   .then(() => {
     console.log("Connected to Database!");
-    app.listen(process.env.PORT || 5000, () =>
-      console.log(`Listening on port ${process.env.PORT || 5000}`)
+    app.listen(process.env.PORT || 3000, () =>
+      console.log(`Listening on port ${process.env.PORT || 3000}`)
     );
   })
   .catch((err) => {
