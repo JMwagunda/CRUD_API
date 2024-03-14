@@ -34,5 +34,3 @@ const ProductSchema = mongoose.Schema(
 const Product = mongoose.model("Product", ProductSchema);
 
 module.exports = Product;
-// Path: routes/product.route.js
-// Description: This file contains the route handlers
