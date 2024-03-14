@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const ProductSchema = new Schema(
+const mongoose = require("mongoose");
+
+const ProductSchema = mongoose.Schema(
   {
     name: {
       type: String,
@@ -10,9 +10,10 @@ const ProductSchema = new Schema(
 
     quantity: {
       type: Number,
-      required: [true, "Please enter product quantity"],
+      required: true,
       default: 0,
     },
+
     price: {
       type: Number,
       required: true,
@@ -29,6 +30,9 @@ const ProductSchema = new Schema(
   }
 );
 
+
 const Product = mongoose.model("Product", ProductSchema);
 
 module.exports = Product;
+// Path: routes/product.route.js
+// Description: This file contains the route handlers
